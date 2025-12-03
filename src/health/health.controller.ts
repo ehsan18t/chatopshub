@@ -2,9 +2,9 @@ import { Controller, Get } from "@nestjs/common";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
 import {
   HealthCheck,
+  type HealthCheckResult,
   HealthCheckService,
   MemoryHealthIndicator,
-  type HealthCheckResult,
 } from "@nestjs/terminus";
 import { DbHealthIndicator } from "./indicators/db.health";
 import { ValkeyHealthIndicator } from "./indicators/valkey.health";
