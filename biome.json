@@ -7,7 +7,7 @@
     "defaultBranch": "main"
   },
   "files": {
-    "includes": ["src/**"],
+    "includes": ["src/**", "test/**"],
     "ignoreUnknown": true
   },
   "formatter": {
@@ -15,7 +15,7 @@
     "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 100,
-    "lineEnding": "auto"
+    "lineEnding": "lf"
   },
   "linter": {
     "enabled": true,
@@ -23,6 +23,22 @@
       "recommended": true,
       "nursery": {
         "noDeprecatedImports": "error"
+      },
+      "complexity": {
+        "noForEach": "warn",
+        "useFlatMap": "error"
+      },
+      "suspicious": {
+        "noExplicitAny": "error",
+        "noConsole": "warn"
+      },
+      "style": {
+        "useConst": "error",
+        "useTemplate": "warn"
+      },
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
       }
     }
   },
@@ -53,7 +69,7 @@
   },
   "overrides": [
     {
-      "includes": ["src/**/*.controller.ts"],
+      "includes": ["src/**/*.controller.ts", "src/**/*.dto.ts"],
       "linter": {
         "rules": {
           "style": {
@@ -62,6 +78,17 @@
           },
           "suspicious": {
             "noExplicitAny": "warn"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/*.spec.ts", "test/**/*.ts"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "warn",
+            "noConsole": "off"
           }
         }
       }
