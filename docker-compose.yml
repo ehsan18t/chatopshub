@@ -1,0 +1,37 @@
+# Chat OPS Hub - Docker Compose
+# PostgreSQL 18 + Valkey 9
+
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: chatops-postgres
+    environment:
+      POSTGRES_USER: chatops
+      POSTGRES_PASSWORD: chatops_dev
+      POSTGRES_DB: chatopshub
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chatops"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  valkey:
+    image: valkey/valkey:9-alpine
+    container_name: chatops-valkey
+    ports:
+      - "6379:6379"
+    volumes:
+      - valkey_data:/data
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  valkey_data:

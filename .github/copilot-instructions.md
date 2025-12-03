@@ -1,0 +1,30 @@
+# Copilot Instructions
+
+- This is battle-tested production software - write code accordingly
+- Prioritize reliability, security, and maintainability over cleverness
+- Follow existing patterns in the codebase - consistency is key
+- When in doubt, check how similar features are implemented
+- Always check for deprecated APIs and replace with newer alternatives
+- Always run `bunx tsc --noEmit`, `bun run lint`, `bun run format` after changes
+- Never use any - use unknown with type guards
+- Never use null in metadata objects - use undefined instead
+- Export types alongside schemas
+- Never add extension to imports.
+- Use alias paths as defined in tsconfig.json
+- Use bun only as package manager. Do not use bun-specific APIs in the codebase.
+- Always write node compatible code.
+- The project should be package manager agnostic.
+- Always use pagination for list endpoints
+- Use database indexes for filtered/sorted columns
+- Batch operations when processing multiple items
+- Avoid N+1 queries - use proper joins or batch fetches
+- Use limit on all queries
+- Cache expensive computations when appropriate
+- What to Test (MANDATORY for each function)
+  - Success path: Normal operation with valid inputs
+  - Error paths: NotFoundError, ForbiddenError, BadRequestError, ConflictError scenarios
+  - Edge cases: Empty arrays, null values, boundary conditions
+  - Authorization: Verify role-based access is enforced
+  - Validation: Verify invalid inputs are rejected
+- Minimum coverage: Every public function must have at least 2 tests (success + failure)
+- Zero coverage is NEVER acceptable - every new service must include tests
