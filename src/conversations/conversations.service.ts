@@ -82,6 +82,10 @@ export class ConversationsService {
       .values(newConv)
       .returning();
 
+    if (!conversation) {
+      throw new Error("Failed to create conversation");
+    }
+
     await this.eventsService.create(conversation.id, "CREATED");
 
     this.logger.log(`Conversation created: ${conversation.id}`);
@@ -306,6 +310,10 @@ export class ConversationsService {
       })
       .where(eq(conversations.id, conversationId))
       .returning();
+
+    if (!updated) {
+      throw new Error("Failed to reopen conversation");
+    }
 
     // Record event
     await this.eventsService.create(conversationId, "REOPENED");

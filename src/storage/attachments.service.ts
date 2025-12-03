@@ -24,6 +24,11 @@ export class AttachmentsService {
     };
 
     const [created] = await this.db.db.insert(attachments).values(newAttachment).returning();
+
+    if (!created) {
+      throw new Error("Failed to create attachment");
+    }
+
     return created;
   }
 

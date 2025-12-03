@@ -141,7 +141,7 @@ describe("UsersService", () => {
       const result = await service.findAll("org-1");
 
       expect(result).toHaveLength(2);
-      expect(result[0].passwordHash).toBe("[REDACTED]");
+      expect(result[0]?.passwordHash).toBe("[REDACTED]");
     });
 
     it("should respect limit parameter", async () => {

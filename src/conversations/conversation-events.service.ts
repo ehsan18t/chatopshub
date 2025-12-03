@@ -42,6 +42,10 @@ export class ConversationEventsService {
 
     const [event] = await this.dbService.db.insert(conversationEvents).values(newEvent).returning();
 
+    if (!event) {
+      throw new Error("Failed to create conversation event");
+    }
+
     this.logger.debug(`Event created: ${eventType} for conversation ${conversationId}`);
     return event;
   }

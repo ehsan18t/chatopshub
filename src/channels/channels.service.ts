@@ -22,6 +22,10 @@ export class ChannelsService {
 
     const [channel] = await this.dbService.db.insert(channels).values(newChannel).returning();
 
+    if (!channel) {
+      throw new Error("Failed to create channel");
+    }
+
     this.logger.log(`Channel created: ${channel.id} (${dto.provider})`);
     return channel;
   }
@@ -93,6 +97,10 @@ export class ChannelsService {
       .where(eq(channels.id, id))
       .returning();
 
+    if (!updated) {
+      throw new Error("Failed to update channel");
+    }
+
     this.logger.log(`Channel updated: ${id}`);
     return updated;
   }
@@ -105,6 +113,10 @@ export class ChannelsService {
       .set({ status })
       .where(eq(channels.id, id))
       .returning();
+
+    if (!updated) {
+      throw new Error("Failed to update channel status");
+    }
 
     this.logger.log(`Channel status updated: ${id} -> ${status}`);
     return updated;

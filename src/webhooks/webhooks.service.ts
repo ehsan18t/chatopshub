@@ -294,33 +294,35 @@ export class WebhooksService {
       body = message.text;
     } else if (message.attachments && message.attachments.length > 0) {
       const attachment = message.attachments[0];
-      switch (attachment.type) {
-        case "image":
-          mediaType = "image";
-          mediaUrl = attachment.payload.url;
-          body = "[Image]";
-          break;
-        case "audio":
-          mediaType = "audio";
-          mediaUrl = attachment.payload.url;
-          body = "[Audio]";
-          break;
-        case "video":
-          mediaType = "video";
-          mediaUrl = attachment.payload.url;
-          body = "[Video]";
-          break;
-        case "file":
-          mediaType = "document";
-          mediaUrl = attachment.payload.url;
-          body = "[File]";
-          break;
-        case "location":
-          mediaType = "location";
-          body = "[Location]";
-          break;
-        default:
-          body = `[${attachment.type}]`;
+      if (attachment) {
+        switch (attachment.type) {
+          case "image":
+            mediaType = "image";
+            mediaUrl = attachment.payload.url;
+            body = "[Image]";
+            break;
+          case "audio":
+            mediaType = "audio";
+            mediaUrl = attachment.payload.url;
+            body = "[Audio]";
+            break;
+          case "video":
+            mediaType = "video";
+            mediaUrl = attachment.payload.url;
+            body = "[Video]";
+            break;
+          case "file":
+            mediaType = "document";
+            mediaUrl = attachment.payload.url;
+            body = "[File]";
+            break;
+          case "location":
+            mediaType = "location";
+            body = "[Location]";
+            break;
+          default:
+            body = `[${attachment.type}]`;
+        }
       }
     }
 

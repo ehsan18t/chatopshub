@@ -39,6 +39,10 @@ export class ContactsService {
         .where(eq(contacts.id, existing.id))
         .returning();
 
+      if (!updated) {
+        throw new Error("Failed to update contact");
+      }
+
       return updated;
     }
 
@@ -52,6 +56,10 @@ export class ContactsService {
     };
 
     const [contact] = await this.dbService.db.insert(contacts).values(newContact).returning();
+
+    if (!contact) {
+      throw new Error("Failed to create contact");
+    }
 
     this.logger.log(`Contact created: ${contact.id} (${provider}: ${providerId})`);
     return contact;
@@ -132,6 +140,10 @@ export class ContactsService {
       .set(updates)
       .where(eq(contacts.id, id))
       .returning();
+
+    if (!updated) {
+      throw new Error("Failed to update contact");
+    }
 
     this.logger.log(`Contact updated: ${id}`);
     return updated;

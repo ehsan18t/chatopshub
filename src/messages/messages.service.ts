@@ -41,6 +41,10 @@ export class MessagesService {
 
     const [message] = await this.dbService.db.insert(messages).values(newMessage).returning();
 
+    if (!message) {
+      throw new Error("Failed to create message");
+    }
+
     // Update conversation last message timestamp
     await this.conversationsService.updateLastMessageAt(conversationId);
 
@@ -127,7 +131,8 @@ export class MessagesService {
     // Check if there are more messages
     const hasMore = result.length > limit;
     const data = hasMore ? result.slice(0, limit) : result;
-    const nextCursor = hasMore ? data[data.length - 1].id : null;
+    const lastItem = data[data.length - 1];
+    const nextCursor = hasMore && lastItem ? lastItem.id : null;
 
     return {
       data,
@@ -152,6 +157,10 @@ export class MessagesService {
       })
       .where(eq(messages.id, id))
       .returning();
+
+    if (!updated) {
+      throw new Error("Failed to update message status");
+    }
 
     // Create event
     const eventType =

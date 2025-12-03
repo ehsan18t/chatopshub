@@ -77,6 +77,10 @@ export class AnalyticsService {
       })
       .returning();
 
+    if (!created) {
+      throw new Error("Failed to create agent session");
+    }
+
     this.logger.log(`Session started for agent ${agentId}: ${created.id}`);
     return created.id;
   }

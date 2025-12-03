@@ -35,6 +35,10 @@ export class UsersService {
 
     const [user] = await this.dbService.db.insert(users).values(newUser).returning();
 
+    if (!user) {
+      throw new Error("Failed to create user");
+    }
+
     this.logger.log(`User created: ${user.id}`);
     return this.sanitizeUser(user);
   }
@@ -104,6 +108,10 @@ export class UsersService {
       .where(eq(users.id, id))
       .returning();
 
+    if (!updated) {
+      throw new Error("Failed to update user");
+    }
+
     this.logger.log(`User updated: ${id}`);
     return this.sanitizeUser(updated);
   }
@@ -116,6 +124,10 @@ export class UsersService {
       .set({ status })
       .where(eq(users.id, id))
       .returning();
+
+    if (!updated) {
+      throw new Error("Failed to update user status");
+    }
 
     this.logger.log(`User status updated: ${id} -> ${status}`);
     return this.sanitizeUser(updated);

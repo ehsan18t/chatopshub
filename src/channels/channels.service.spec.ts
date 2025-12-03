@@ -79,7 +79,7 @@ describe("ChannelsService", () => {
       const result = await service.findAll("org-1");
 
       expect(result).toHaveLength(1);
-      expect(result[0].id).toBe("channel-1");
+      expect(result[0]?.id).toBe("channel-1");
     });
 
     it("should respect limit parameter", async () => {
@@ -150,7 +150,7 @@ describe("ChannelsService", () => {
       const result = await service.findByProvider("org-1", "WHATSAPP");
 
       expect(result).toHaveLength(1);
-      expect(result[0].provider).toBe("WHATSAPP");
+      expect(result[0]?.provider).toBe("WHATSAPP");
     });
   });
 
