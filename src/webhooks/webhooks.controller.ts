@@ -17,8 +17,8 @@ import {
 import { ApiExcludeEndpoint, ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { eq } from "drizzle-orm";
 import type { Request } from "express";
-import type { DbService } from "../db/db.service";
-import { channels } from "../db/schema/index";
+import type { DbService } from "@/db/db.service";
+import { channels } from "@/db/schema/index";
 import type { MessengerWebhookPayload, WhatsAppWebhookPayload } from "./dto/index";
 import type { WebhooksService } from "./webhooks.service";
 

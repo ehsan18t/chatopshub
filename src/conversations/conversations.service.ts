@@ -6,7 +6,7 @@ import {
   NotFoundException,
 } from "@nestjs/common";
 import { and, desc, eq, sql } from "drizzle-orm";
-import type { DbService } from "../db/db.service";
+import type { DbService } from "@/db/db.service";
 import {
   type Conversation,
   type channels,
@@ -14,8 +14,8 @@ import {
   conversations,
   type NewConversation,
   type users,
-} from "../db/schema/index";
-import type { ValkeyService } from "../valkey/valkey.service";
+} from "@/db/schema/index";
+import type { ValkeyService } from "@/valkey/valkey.service";
 import type { ConversationEventsService } from "./conversation-events.service";
 import type { ConversationQueryDto } from "./dto/index";
 

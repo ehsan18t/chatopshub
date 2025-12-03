@@ -1,7 +1,7 @@
 import { Injectable, Logger, NotFoundException } from "@nestjs/common";
 import { and, eq } from "drizzle-orm";
-import type { DbService } from "../db/db.service";
-import { type Contact, contacts, type NewContact } from "../db/schema/index";
+import type { DbService } from "@/db/db.service";
+import { type Contact, contacts, type NewContact } from "@/db/schema/index";
 
 @Injectable()
 export class ContactsService {

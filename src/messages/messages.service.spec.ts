@@ -1,8 +1,8 @@
 import { NotFoundException } from "@nestjs/common";
-import { describe, it, expect, beforeEach, vi } from "vitest";
-import type { ConversationEventsService } from "../conversations/conversation-events.service";
-import type { ConversationsService } from "../conversations/conversations.service";
-import type { DbService } from "../db/db.service";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import type { ConversationEventsService } from "@/conversations/conversation-events.service";
+import type { ConversationsService } from "@/conversations/conversations.service";
+import type { DbService } from "@/db/db.service";
 import { MessagesService } from "./messages.service";
 
 const mockMessage = {

@@ -10,8 +10,8 @@ import {
   Query,
 } from "@nestjs/common";
 import { ApiBearerAuth, ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
-import { CurrentUser, type CurrentUserPayload } from "../common/decorators/current-user.decorator";
-import type { ConversationsService } from "../conversations/conversations.service";
+import { CurrentUser, type CurrentUserPayload } from "@/common/decorators/current-user.decorator";
+import type { ConversationsService } from "@/conversations/conversations.service";
 import type { CreateMessageDto, MessageQueryDto } from "./dto/index";
 import type { MessagesService } from "./messages.service";
 

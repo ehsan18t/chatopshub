@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Query, UseGuards } from "@nestjs/common";
 import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from "@nestjs/swagger";
-import { Roles } from "../common/decorators/roles.decorator";
-import { RolesGuard } from "../common/guards/roles.guard";
+import { Roles } from "@/common/decorators/roles.decorator";
+import { RolesGuard } from "@/common/guards/roles.guard";
 import type { AnalyticsService } from "./analytics.service";
 
 @ApiTags("Analytics")

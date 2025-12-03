@@ -11,8 +11,8 @@ import {
 } from "@nestjs/websockets";
 import { createAdapter } from "@socket.io/redis-adapter";
 import type { Server, Socket } from "socket.io";
-import type { ConversationsService } from "../conversations/conversations.service";
-import type { ValkeyService } from "../valkey/valkey.service";
+import type { ConversationsService } from "@/conversations/conversations.service";
+import type { ValkeyService } from "@/valkey/valkey.service";
 
 // Events that the server emits to clients
 export enum ServerEvent {

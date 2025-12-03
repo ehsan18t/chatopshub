@@ -1,7 +1,7 @@
 import { Injectable, Logger, NotFoundException } from "@nestjs/common";
 import { and, eq } from "drizzle-orm";
-import type { DbService } from "../db/db.service";
-import { type Channel, channels, type NewChannel } from "../db/schema/index";
+import type { DbService } from "@/db/db.service";
+import { type Channel, channels, type NewChannel } from "@/db/schema/index";
 import type { CreateChannelDto, UpdateChannelDto } from "./dto/index";
 
 @Injectable()

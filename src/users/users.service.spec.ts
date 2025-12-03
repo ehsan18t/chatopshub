@@ -1,7 +1,7 @@
-import { NotFoundException, ConflictException } from "@nestjs/common";
-import { describe, it, expect, beforeEach, vi } from "vitest";
-import type { AuthService } from "../auth/auth.service";
-import type { DbService } from "../db/db.service";
+import { ConflictException, NotFoundException } from "@nestjs/common";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import type { AuthService } from "@/auth/auth.service";
+import type { DbService } from "@/db/db.service";
 import { UsersService } from "./users.service";
 
 // Mock user data

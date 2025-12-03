@@ -2,12 +2,12 @@ import { OnWorkerEvent, Processor, WorkerHost } from "@nestjs/bullmq";
 import { Logger } from "@nestjs/common";
 import type { Job } from "bullmq";
 import { eq } from "drizzle-orm";
-import type { DbService } from "../db/db.service";
-import { channels, contacts, conversations, messages } from "../db/schema/index";
-import { type EventsGateway, ServerEvent } from "../events/events.gateway";
-import type { MessagesService } from "../messages/messages.service";
-import type { MessengerService } from "../providers/messenger.service";
-import type { WhatsAppService } from "../providers/whatsapp.service";
+import type { DbService } from "@/db/db.service";
+import { channels, contacts, conversations, messages } from "@/db/schema/index";
+import { type EventsGateway, ServerEvent } from "@/events/events.gateway";
+import type { MessagesService } from "@/messages/messages.service";
+import type { MessengerService } from "@/providers/messenger.service";
+import type { WhatsAppService } from "@/providers/whatsapp.service";
 
 export interface OutboundMessageJobData {
   messageId: string;

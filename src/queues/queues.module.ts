@@ -1,10 +1,10 @@
 import { BullModule } from "@nestjs/bullmq";
 import { forwardRef, Module } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { EventsModule } from "../events/events.module";
-import { MessagesModule } from "../messages/messages.module";
-import { ProvidersModule } from "../providers/providers.module";
-import { WebhooksModule } from "../webhooks/webhooks.module";
+import { EventsModule } from "@/events/events.module";
+import { MessagesModule } from "@/messages/messages.module";
+import { ProvidersModule } from "@/providers/providers.module";
+import { WebhooksModule } from "@/webhooks/webhooks.module";
 import { OutboundMessageProcessor } from "./outbound-message.processor";
 import { QueuesService } from "./queues.service";
 import { WebhookProcessor } from "./webhook.processor";

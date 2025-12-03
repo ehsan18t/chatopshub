@@ -28,3 +28,11 @@
   - Validation: Verify invalid inputs are rejected
 - Minimum coverage: Every public function must have at least 2 tests (success + failure)
 - Zero coverage is NEVER acceptable - every new service must include tests
+- Commit in small, logical chunks - each commit should represent ONE logical change
+- Commit Strategy (ENFORCED)
+  - Break work into small, atomic commits - don't bundle unrelated changes
+  - Each commit should be self-contained and pass all checks independently
+  - Use descriptive commit messages following conventional commits format
+  - Example: feat(tickets): add bulk status update endpoint
+  - If a feature requires multiple files, commit related changes together but separate from other features
+  - Never make one giant commit at the end - commit progressively as you complete each part

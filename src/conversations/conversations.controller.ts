@@ -1,6 +1,6 @@
 import { Controller, Get, HttpCode, HttpStatus, Param, Post, Query } from "@nestjs/common";
 import { ApiBearerAuth, ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
-import { CurrentUser, type CurrentUserPayload } from "../common/decorators/current-user.decorator";
+import { CurrentUser, type CurrentUserPayload } from "@/common/decorators/current-user.decorator";
 import type { ConversationEventsService } from "./conversation-events.service";
 import type { ConversationsService } from "./conversations.service";
 import type { ConversationQueryDto } from "./dto/index";

@@ -10,8 +10,8 @@ import {
   Query,
 } from "@nestjs/common";
 import { ApiBearerAuth, ApiOperation, ApiQuery, ApiResponse, ApiTags } from "@nestjs/swagger";
-import { CurrentUser, type CurrentUserPayload } from "../common/decorators/current-user.decorator";
-import { Roles } from "../common/decorators/index";
+import { CurrentUser, type CurrentUserPayload } from "@/common/decorators/current-user.decorator";
+import { Roles } from "@/common/decorators/index";
 import type { CreateUserDto, UpdateUserDto } from "./dto/index";
 import type { UsersService } from "./users.service";
 

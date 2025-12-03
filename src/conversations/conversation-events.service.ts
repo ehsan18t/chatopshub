@@ -1,11 +1,11 @@
 import { Injectable, Logger } from "@nestjs/common";
 import { desc, eq } from "drizzle-orm";
-import type { DbService } from "../db/db.service";
+import type { DbService } from "@/db/db.service";
 import {
   type ConversationEvent,
   conversationEvents,
   type NewConversationEvent,
-} from "../db/schema/index";
+} from "@/db/schema/index";
 
 export type ConversationEventType =
   | "CREATED"

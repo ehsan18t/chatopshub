@@ -1,6 +1,6 @@
 import { NotFoundException } from "@nestjs/common";
-import { describe, it, expect, beforeEach, vi } from "vitest";
-import type { DbService } from "../db/db.service";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import type { DbService } from "@/db/db.service";
 import { ChannelsService } from "./channels.service";
 
 const mockChannel = {

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, type Mock, vi } from "vitest";
-import type { DbService } from "../db/db.service";
+import type { DbService } from "@/db/db.service";
 import { AnalyticsService } from "./analytics.service";
 
 interface ChainableQuery {

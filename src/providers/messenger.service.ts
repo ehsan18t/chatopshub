@@ -1,5 +1,5 @@
 import { Injectable, Logger } from "@nestjs/common";
-import type { channels } from "../db/schema/index";
+import type { channels } from "@/db/schema/index";
 
 export interface MessengerSendResult {
   success: boolean;

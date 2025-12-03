@@ -1,8 +1,8 @@
 import { ConflictException, Injectable, Logger, NotFoundException } from "@nestjs/common";
 import { and, eq } from "drizzle-orm";
-import type { AuthService } from "../auth/auth.service";
-import type { DbService } from "../db/db.service";
-import { type NewUser, type User, users } from "../db/schema/index";
+import type { AuthService } from "@/auth/auth.service";
+import type { DbService } from "@/db/db.service";
+import { type NewUser, type User, users } from "@/db/schema/index";
 import type { CreateUserDto, UpdateUserDto } from "./dto/index";
 
 @Injectable()

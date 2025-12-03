@@ -10,8 +10,8 @@ import {
   Post,
 } from "@nestjs/common";
 import { ApiBearerAuth, ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
-import { CurrentUser, type CurrentUserPayload } from "../common/decorators/current-user.decorator";
-import { Roles } from "../common/decorators/index";
+import { CurrentUser, type CurrentUserPayload } from "@/common/decorators/current-user.decorator";
+import { Roles } from "@/common/decorators/index";
 import type { ChannelsService } from "./channels.service";
 import type { CreateChannelDto, UpdateChannelDto } from "./dto/index";
 

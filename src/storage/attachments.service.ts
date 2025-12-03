@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { eq } from "drizzle-orm";
-import type { DbService } from "../db/db.service";
-import { type Attachment, attachments, type NewAttachment } from "../db/schema/index";
+import type { DbService } from "@/db/db.service";
+import { type Attachment, attachments, type NewAttachment } from "@/db/schema/index";
 import type { StorageService, UploadedFile } from "./storage.service";
 
 @Injectable()

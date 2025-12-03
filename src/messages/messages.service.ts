@@ -1,9 +1,9 @@
 import { Injectable, Logger, NotFoundException } from "@nestjs/common";
 import { and, desc, eq, lt } from "drizzle-orm";
-import type { ConversationEventsService } from "../conversations/conversation-events.service";
-import type { ConversationsService } from "../conversations/conversations.service";
-import type { DbService } from "../db/db.service";
-import { type Message, messages, type NewMessage } from "../db/schema/index";
+import type { ConversationEventsService } from "@/conversations/conversation-events.service";
+import type { ConversationsService } from "@/conversations/conversations.service";
+import type { DbService } from "@/db/db.service";
+import { type Message, messages, type NewMessage } from "@/db/schema/index";
 import type { CreateMessageDto } from "./dto/index";
 
 export interface CursorPaginatedResult<T> {

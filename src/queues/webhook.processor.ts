@@ -1,8 +1,8 @@
 import { OnWorkerEvent, Processor, WorkerHost } from "@nestjs/bullmq";
 import { Logger } from "@nestjs/common";
 import type { Job } from "bullmq";
-import type { MessengerWebhookPayload, WhatsAppWebhookPayload } from "../webhooks/dto/index";
-import type { WebhooksService } from "../webhooks/webhooks.service";
+import type { MessengerWebhookPayload, WhatsAppWebhookPayload } from "@/webhooks/dto/index";
+import type { WebhooksService } from "@/webhooks/webhooks.service";
 
 export interface WebhookJobData {
   type: "whatsapp" | "messenger";

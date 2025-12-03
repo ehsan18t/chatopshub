@@ -1,11 +1,11 @@
 import * as crypto from "node:crypto";
 import { Injectable, Logger } from "@nestjs/common";
 import { eq } from "drizzle-orm";
-import type { ContactsService } from "../contacts/contacts.service";
-import type { ConversationsService } from "../conversations/conversations.service";
-import type { DbService } from "../db/db.service";
-import { channels } from "../db/schema/index";
-import type { MessagesService } from "../messages/messages.service";
+import type { ContactsService } from "@/contacts/contacts.service";
+import type { ConversationsService } from "@/conversations/conversations.service";
+import type { DbService } from "@/db/db.service";
+import { channels } from "@/db/schema/index";
+import type { MessagesService } from "@/messages/messages.service";
 import type {
   MessengerMessaging,
   MessengerWebhookPayload,

@@ -1,9 +1,9 @@
 import * as crypto from "node:crypto";
 import { describe, expect, it, vi } from "vitest";
-import type { ContactsService } from "../contacts/contacts.service";
-import type { ConversationsService } from "../conversations/conversations.service";
-import type { DbService } from "../db/db.service";
-import type { MessagesService } from "../messages/messages.service";
+import type { ContactsService } from "@/contacts/contacts.service";
+import type { ConversationsService } from "@/conversations/conversations.service";
+import type { DbService } from "@/db/db.service";
+import type { MessagesService } from "@/messages/messages.service";
 import { WebhooksService } from "./webhooks.service";
 
 // Mock dependencies with minimal implementations for testing

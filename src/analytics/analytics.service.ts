@@ -1,13 +1,13 @@
 import { Injectable, Logger } from "@nestjs/common";
 import { and, desc, eq, gte, lte } from "drizzle-orm";
-import type { DbService } from "../db/db.service";
+import type { DbService } from "@/db/db.service";
 import {
   agentSessions,
   conversationEvents,
   conversations,
   messages,
   users,
-} from "../db/schema/index";
+} from "@/db/schema/index";
 
 export interface AgentPerformanceStats {
   agentId: string;
